@@ -7,9 +7,14 @@ document.addEventListener('DOMContentLoaded',function(){
   // mobile nav toggle
   const toggle=document.querySelector('.nav-toggle');
   const nav=document.querySelector('.site-nav');
-  if(toggle){toggle.addEventListener('click',()=>{
-    if(nav.style.display==='flex')nav.style.display='none';else nav.style.display='flex';
-  })}
+  if(toggle && nav){
+    toggle.setAttribute('aria-expanded','false');
+    toggle.addEventListener('click',()=>{
+      const isOpen = nav.style.display === 'flex';
+      nav.style.display = isOpen ? 'none' : 'flex';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+  }
 
   // contact form handler using Formspree
   const form=document.getElementById('contactForm');
