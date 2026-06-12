@@ -1,0 +1,389 @@
+/* Simple stylesheet to match reference layout and typography */
+:root{--accent:#fbacc5;--bg-dark:#111111;--bg-light:#0c0c0c;--text:#fafafa}
+*{box-sizing:border-box}
+body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-light);color:#fafafa}
+.site-header{background:var(--bg-dark);color:var(--text);padding:18px 24px}
+.header-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.logo-section{display:flex;align-items:center;gap:12px}
+.logo img{width:50px;height:auto}
+.logo-text{font-size: 20px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.site-nav{display:flex;gap:28px;justify-content:center;flex:1}
+.site-nav a, .social-icons a, .footer-social a, .custom-reel-btn, .nav-toggle, button {
+  transition: transform .2s ease, color .2s ease, opacity .2s ease, background-color .2s ease, border-color .2s ease;
+}
+.site-nav a{color:var(--text);text-decoration:none;padding:8px 12px;font-size:16px}
+.site-nav a:hover, .social-icons a:hover, .footer-social a:hover, .custom-reel-btn:hover, .nav-toggle:hover, button:hover {
+  transform: translateY(-2px);
+}
+.site-nav a:hover{color:var(--accent)}
+.social-icons{display:flex;gap:16px;align-items:center}
+.social-icons a{color:var(--text);text-decoration:none;font-size:16px}
+.social-icons a:hover{color:var(--accent)}
+.nav-toggle{display:none;background:transparent;border:0;color:var(--text);font-size:22px}
+.hero{background:var(--bg-dark);color:var(--text);padding:120px 24px 80px}
+.hero-inner{max-width:1140px;margin:0 auto}
+.hero h1{font-size:56px;margin:0;letter-spacing:6px}
+.subtitle{color:var(--accent);font-weight:700;margin-top:8px}
+.video-container {position: relative; width: 100%; max-width: 100%;aspect-ratio: 16 / 9; overflow: hidden; box-sizing: border-box;}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15); /* Subtle dark tint so white text is highly readable */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.video-grid {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0px;
+  padding: 8px 0 0 100px;
+}
+
+.video-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(251, 172, 197, 0.35);
+}
+
+.custom-reel-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.custom-reel-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+.container{max-width:1140px;margin:40px auto;padding:0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:0;}
+.grid img,.grid .grid-item img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .3s ease,box-shadow .3s ease}
+.grid img:hover,.grid .grid-item img:hover{filter:brightness(1.1);box-shadow:0 0 30px rgba(251,172,197,0.6),inset 0 0 20px rgba(251,172,197,0.3)}
+.work-preview h2,.portfolio h1{margin-left:24px}
+.about{padding:40px 0}
+.default-title {
+  position: relative;
+  top: 40px;
+  left: 10%;
+  margin: 0;
+  font-size: 46px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  padding: 0 24px 32px;
+}
+.site-footer{background:var(--bg-dark);padding:40px 24px;color:var(--text)}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.social-icons a, 
+.footer-social a {
+  color: #ffffff;
+  font-size: 16px;
+  margin: 0 10px;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.social-icons a:hover, 
+.footer-social a:hover {
+  opacity: 1;
+}
+
+.hidden{display:none}
+@media(max-width:1100px){
+  .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(90vw, 960px); }
+}
+@media(max-width:768px){
+  .video-grid { grid-template-columns: 1fr; width: 100%; }
+}
+@media(max-width:900px){.site-nav{display:none}.nav-toggle{display:block}.header-inner{gap:12px}.social-icons{order:2}}
+@media(max-width:600px){.footer-inner{flex-direction:column;gap:16px}}
+
+
+/* ==========================================================================
+   CONTACT PAGE
+   ========================================================================== */
+
+.contact-section {
+  display: flex;
+  min-height: calc(100vh - 86px); /* Fills screen height perfectly minus header */
+  width: 100%;
+  background-color: #0d0d0d;
+}
+
+/* --- Left Column: Image Section --- */
+.contact-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.contact-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(110%); /* High contrast B&W vibe */
+}
+
+/* --- Right Column: Form Section --- */
+.contact-form-container {
+  flex: 1;
+  background-color: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 10%;
+  position: relative;
+}
+
+/* Top-Left Section Title ("C O N T A C T" with line-through effect) */
+.contact-title {
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  margin: 0;
+  font-size: 46px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.form-wrapper {
+  max-width: 460px;
+  width: 100%;
+}
+
+/* "SAY HELLO!" Header */
+.form-heading {
+  font-size: 20px;
+  letter-spacing: 5px;
+  margin: 0 0 45px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.form-heading span {
+  color: var(--accent); /* Uses your soft pink token */
+}
+
+/* --- Floating/Underline Input Groups --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Managed by input-group margins instead */
+  max-width: 100%;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent !important;
+  border: none;
+  border-bottom: 1px solid #444444; /* Muted subtle bottom borders */
+  color: #ffffff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease;
+  resize: none;
+  border-radius: 0;
+}
+
+/* Standard HTML Label placement mimicking the placeholders */
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: #777777;
+  font-weight: 400;
+  pointer-events: none;
+  transition: 0.3s ease all;
+  font-size: 13px;
+}
+
+/* Float Label Upward Animation on Focus or Valid Entry */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: -12px;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-bottom: 1px solid #ffffff; /* Brightens line color on active focus */
+}
+
+/* --- Framed Submit Button --- */
+.btn-send {
+  align-self: flex-start; /* Keeps button fixed to left inline with inputs */
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid var(--accent); /* Accent border box */
+  padding: 10px 30px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0;
+  margin-top: 10px;
+}
+
+.btn-send:hover {
+  background-color: var(--accent);
+  color: #000000;
+  transform: none; /* Disables global upward wiggle for layout balance */
+}
+
+/* --- Responsive Layout Rules for Tablets/Mobile --- */
+@media (max-width: 850px) {
+  .contact-section {
+    flex-direction: column; /* Stack vertically */
+  }
+  
+  .contact-image-container {
+    height: 450px; /* Set fixed size block for portrait display on smaller viewports */
+  }
+  
+  .contact-title {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 40px;
+  }
+  
+  .contact-form-container {
+    padding: 50px 24px;
+  }
+}
+
+/* ==========================================================================
+    ABOUT PAGE
+   ========================================================================== */
+
+.about-section {
+  display: flex;
+  min-height: calc(100vh - 86px); /* Fills screen height perfectly minus header */
+  width: 100%;
+}
+.about-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.about-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(110%); /* High contrast B&W vibe */
+}
+.about-content {
+  flex: 1;
+  background-color: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 10%;
+}
+.about-title {
+  position: relative;
+  top: 40px;
+  left: 0%;
+  margin: 0 0 40px;
+  font-size: 24px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fbacc5
+}
+.about-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  max-width: 600px;
+}
+@media (max-width: 850px) {
+  .about-section {
+    flex-direction: column; /* Stack vertically */
+  }
+  
+  .about-image-container {
+    height: 450px; /* Set fixed size block for portrait display on smaller viewports */
+    width: 450px;
+  }
+  
+  .about-title {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 40px;
+  }
+  
+  .about-content {
+    padding: 50px 24px;
+  }
+}
