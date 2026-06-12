@@ -53,7 +53,7 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0px;
-  padding: 8px 0 0 100px;
+  padding: 25px 25px 0 50px;
 }
 
 .video-card {
