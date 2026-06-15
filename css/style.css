@@ -86,7 +86,7 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
   }
   
   .featured-video .video-container {
-    border-radius: 8px;
+    border-radius: 0px;
   }
 }
 
@@ -135,14 +135,14 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 @media(max-width:768px){
   .video-card{
     min-height: 320px;
-    border-radius: 12px;
+    border-radius: 0px;
   }
 }
 
 @media(max-width:480px){
   .video-card{
     min-height: 220px;
-    border-radius: 8px;
+    border-radius: 0px;
   }
 }
 
