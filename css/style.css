@@ -1,5 +1,5 @@
 /* Simple stylesheet to match reference layout and typography */
-:root{--accent:#fbacc5;--bg-dark:#111111;--bg-light:#0c0c0c;--text:#fafafa}
+:root{--accent:#fbacc5;--bg-dark:#111111;--bg-light:#111111;--text:#fafafa}
 *{box-sizing:border-box}
 body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-light);color:#fafafa}
 .site-header{background:var(--bg-dark);color:var(--text);padding:22px 24px;position:relative}
@@ -11,15 +11,15 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 .site-nav a, .social-icons a, .footer-social a, .custom-reel-btn, .nav-toggle, button {
   transition: transform .2s ease, color .2s ease, opacity .2s ease, background-color .2s ease, border-color .2s ease;
 }
-.site-nav a{color:var(--text);text-decoration:none;padding:8px 12px;font-size:16px}
+.site-nav a{color: white;text-decoration:none;padding:8px 12px;font-size:16px}
 .site-nav a:hover, .social-icons a:hover, .footer-social a:hover, .custom-reel-btn:hover, .nav-toggle:hover, button:hover {
   transform: translateY(-2px);
 }
 .site-nav a:hover{color:var(--accent)}
 .social-icons{display:flex;gap:16px;align-items:center}
-.social-icons a{color:var(--text);text-decoration:none;font-size:16px}
+.social-icons a{color:white;text-decoration:none;font-size:16px}
 .social-icons a:hover{color:var(--accent)}
-.nav-toggle{display:none;background:transparent;border:0;color:var(--text);font-size:22px}
+.nav-toggle{display:none;background:transparent;border:0;color: var(--text);font-size:22px}
 .hero{background:var(--bg-dark);color:var(--text);padding:120px 24px 80px}
 .hero-inner{max-width:1140px;margin:0 auto}
 .hero h1{font-size:56px;margin:0;letter-spacing:6px}
@@ -61,7 +61,7 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 .featured-video {
   width: 100%;
   padding: 0;
-  background: var(--bg-light);
+  background: var(--bg-dark);
 }
 
 .featured-video .video-container {
@@ -163,6 +163,7 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  letter-spacing: 6px;
 }
 
 .custom-reel-btn:hover {
@@ -182,11 +183,11 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 .container{max-width:2000px;margin:40px auto;padding:0 24px}
 
 @media(max-width:768px){
-  .container{margin:30px auto;padding:0 20px}
+  .container{margin:30px auto;padding:0; max-width: 100%}
 }
 
 @media(max-width:480px){
-  .container{margin:20px auto;padding:0 16px}
+  .container{margin:20px auto;padding:0; max-width: 100%}
 }
 .grid{display:grid;grid-template-columns: repeat(3, 1fr);gap:0;}
 .grid img,.grid .grid-item img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .3s ease,box-shadow .3s ease}
@@ -209,19 +210,18 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 .about{padding:40px 0}
 .default-title {
   position: relative;
-  top: 40px;
+  top: 20px;
   left: 0;
   margin: 0;
-  font-size: 46px;
+  font-size: 36px;
   letter-spacing: 6px;
   text-transform: uppercase;
   font-weight: 700;
   color: #ffffff;
   text-decoration: line-through;
   text-decoration-thickness: 2px;
-  padding: 0px 24px 32px;
-  padding-left: 50px;
-  padding-bottom: 50px;
+  padding-left: 5%;
+  letter-spacing: 10px;
 }
 
 @media(max-width:768px){
@@ -259,7 +259,7 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
   font-size: 24px;
   margin: 0 10px;
   text-decoration: none;
-  opacity: 0.7;
+  opacity: 1;
   transition: opacity 0.2s ease;
 }
 
@@ -334,7 +334,14 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
   display: flex;
   min-height: calc(100vh - 86px); /* Fills screen height perfectly minus header */
   width: 100%;
-  background-color: #0d0d0d;
+}
+
+.contact-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #0c0c0c;
 }
 
 /* --- Left Column: Image Section --- */
@@ -357,11 +364,10 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 /* --- Right Column: Form Section --- */
 .contact-form-container {
   flex: 1;
-  background-color: #0d0d0d;
+  background-color: #0c0c0c;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 60px 10%;
+  padding: 100px 10%;
   position: relative;
 }
 
@@ -387,12 +393,13 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 
 /* "SAY HELLO!" Header */
 .form-heading {
-  font-size: 20px;
+  font-size: 30px;
   letter-spacing: 5px;
   margin: 0 0 45px 0;
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
+  letter-spacing: 10px;
 }
 
 .form-heading span {
@@ -470,6 +477,7 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
   cursor: pointer;
   border-radius: 0;
   margin-top: 10px;
+  letter-spacing: 6px;
 }
 
 .btn-send:hover {
@@ -481,12 +489,15 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 /* --- Responsive Layout Rules for Tablets/Mobile --- */
 @media (max-width: 850px) {
   .contact-section {
-    flex-direction: column; /* Stack vertically */
+    flex-direction: column; /* Stacks image on top of form */
+    align-items: center;    /* Centers both column blocks horizontally on Android */
+    width: 100%;
   }
   
-  .contact-image-container {
-    height: 350px; /* Set fixed size block for portrait display on smaller viewports */
-    width: 100%;
+  .contact-image-container, 
+  .contact-form-container {
+    width: 100%;            /* Ensure full readable width on small viewports */
+    max-width: 500px;       /* Keeps the forms neat instead of stretching too wide */
   }
   
   .contact-title {
@@ -509,6 +520,7 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 @media (max-width: 480px) {
   .contact-section {
     flex-direction: column;
+    justify-content: center;
   }
   
   .contact-image-container {
@@ -564,6 +576,7 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: #141414
 }
 .about-portrait {
   min-width: 700px;
@@ -575,11 +588,10 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
 }
 .about-content {
   flex: 1;
-  background-color: #0d0d0d;
+  background-color: #141414;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 60px 10%;
+  padding: 10px 10%;
 }
 .about-title {
   position: relative;
@@ -587,10 +599,10 @@ body{margin:0;font-family:Karla,system-ui,Segoe UI,Arial;background:var(--bg-lig
   left: 0%;
   margin: 0 0 40px;
   font-size: 24px;
-  letter-spacing: 6px;
   text-transform: uppercase;
   font-weight: 700;
-  color: #fbacc5
+  color: #fbacc5;
+  letter-spacing: 10px;
 }
 
 .about-title[style*="font-size: 40px"] {
